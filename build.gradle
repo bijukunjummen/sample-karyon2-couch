@@ -1,0 +1,33 @@
+apply plugin: 'application'
+apply plugin: 'idea'
+apply plugin: 'java'
+
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:2.2.0'
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+
+dependencies {
+    compile 'com.netflix.karyon:karyon2-admin-web:2.7.1'
+    compile 'com.netflix.karyon:karyon2-jersey-blocking:2.7.1'
+    compile 'com.netflix.karyon:karyon2-eureka:2.7.1'
+    compile 'com.netflix.karyon:karyon2-archaius:2.7.1'
+    compile 'com.netflix.karyon:karyon2-servo:2.7.1'
+    compile "com.couchbase.client:java-client:$couchbase_client_version"
+
+    compile 'com.google.inject:guice:3.0'
+    compile 'org.slf4j:slf4j-api:1.7.0'
+    testCompile 'junit:junit:4.12'
+    runtime 'org.slf4j:slf4j-simple:1.7.0'
+}
+
+mainClassName = "org.bk.couch.app.SampleKaryon2Couch"
+
+applicationDefaultJvmArgs = ["-Dsample.database=test"]

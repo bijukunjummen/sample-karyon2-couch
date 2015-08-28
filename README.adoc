@@ -1,0 +1,8 @@
+Sample with Karyon2 and Couchbase Java SDK
+------------------------------------------
+
+This is a sample using Netflix Karyon(version 2) and Couchbase Java SDK which is based on the excellent Rx-Java library.
+
+* To run this sample, first start up an instance of http://www.couchbase.com/[Couchbase Server]. Create a bucket called `keyval` using the admin interface provided by Couchbase.
+
+* Once up, run `./gradlew run` to start up the app.
